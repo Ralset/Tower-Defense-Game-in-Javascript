@@ -12,6 +12,7 @@ class Enemy
         this._draw_radius = type.draw_radius;
         this._hp_width = this._draw_radius * 2;
         this._hp_height = 4;
+        this._color = type.color;
         this.x = PATH[0].x * GRID_SIZE;
         this.y = PATH[0].y * GRID_SIZE + SHOP_SIZE + MENU_SIZE;
         this.AtEnd = false;
@@ -52,7 +53,7 @@ class Enemy
     Draw(ctx)
     {
         //crta lika
-        ctx.fillStyle = "red";
+        ctx.fillStyle = this._color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this._draw_radius, 0, Math.PI * 2);
         ctx.fill();

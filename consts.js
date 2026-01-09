@@ -27,27 +27,100 @@ WAVES = [
     ]
   },
   {
-    until_next_wave: 10000,
+    until_next_wave: 30000,
     wave: [
       {
         type: 0,
-        ammount: 10,
+        ammount: 15,
         cooldown: 1500
       }
     ]
   },
-
+  {
+    until_next_wave: 10000,
+    wave: [
+      {
+        type: 1,
+        ammount: 5,
+        cooldown: 500
+      }
+    ]
+  },
+  {
+    until_next_wave: 15000,
+    wave: [
+      {
+        type: 0,
+        ammount: 5,
+        cooldown: 500
+      }
+    ]
+  },
+  {
+    until_next_wave:  20000,
+    wave: [
+      {
+        type: 1,
+        ammount: 20,
+        cooldown: 500
+      }
+    ]
+  },
+  {
+    until_next_wave: 20000,
+    wave: [
+      {
+        type: 0,
+        ammount: 15,
+        cooldown: 1000
+      },
+      {
+        type: 1,
+        ammount: 30,
+        cooldown: 250
+      }
+    ]
+  },
+  {
+    until_next_wave: -1,
+    wave: [
+      {
+        type: 2,
+        ammount: 1,
+        cooldown: 0
+      }
+    ]
+  }
 ]
 
 ENEMY_TYPES = [
   {
-    type: 1,
-    damage: 5,
+    type: 0,
+    damage: 10,
     worth: 25,
     speed: 100,
     hp: 100,
     draw_radius: 15,
+    color: "#ff0000"
   },
+  {
+    type: 1,
+    damage: 5,
+    worth: 10,
+    speed: 500,
+    hp: 30,
+    draw_radius: 10,
+    color: "#1bc592"
+  },
+  {
+    type: 2,
+    damage: 90,
+    worth: 750,
+    speed: 15,
+    hp: 10000,
+    draw_radius: 30,
+    color: "#540a6f"
+  }
 ]
 
 TOWER_TYPES = [
@@ -67,7 +140,7 @@ TOWER_TYPES = [
   {
     type: 2,
     cost: 500,
-    damage: 10,
+    damage: 5,
     range: 180,
     attack_interval: 100,
     width: 50,

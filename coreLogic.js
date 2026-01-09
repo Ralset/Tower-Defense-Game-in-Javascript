@@ -10,13 +10,13 @@ function update(dt){
     enemies.sort((a, b) => {
         if (a._segment !== b._segment) return a._segment - b._segment;
         const seg = a._segment;
-        if (PATH[seg].x === PATH[seg + 1].x) return (Math.abs(PATH[seg].y - a.y) - Math.abs(PATH[seg].y - b.y));
+        if (PATH[seg + 1] === null || PATH[seg].x === PATH[seg + 1].x) return (Math.abs(PATH[seg].y - a.y) - Math.abs(PATH[seg].y - b.y));
         else return a.x - b.x;
     });
     for (const t of towers){
         if (!t.CanAttack) continue;
         let target_enemy_index = -1;
-        for (let i = 0; i < enemies.length; i++){
+        for (let i = enemies.length - 1; i >= 0; i--){
             if(t.InRange(enemies[i])){
                 target_enemy_index = i;
                 break;
