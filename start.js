@@ -1,3 +1,25 @@
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+const BASE_WIDTH = 800;
+const BASE_HEIGHT = 950;
+
+canvas.width = BASE_WIDTH;
+canvas.height = BASE_HEIGHT;
+
+function resize() {
+    const scale = Math.min(
+        window.innerWidth / BASE_WIDTH,
+        window.innerHeight / BASE_HEIGHT
+    );
+
+    canvas.style.width  = `${BASE_WIDTH * scale}px`;
+    canvas.style.height = `${BASE_HEIGHT * scale}px`;
+}
+
+window.addEventListener("resize", resize);
+resize();
+
 let PLACE_MODE = false;
 let PLACE_INDEX = -1;
 let money = 100;
