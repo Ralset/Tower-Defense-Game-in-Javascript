@@ -3,6 +3,10 @@ function drawPlace(){
     drawUnderMouse();
 }
 
+function closePlaceMode(){
+    PLACE_MODE = false;
+}
+
 function placeTower(){
     if (gridPlaced[sqrX][sqrY]) return;
     PLACE_MODE = false;

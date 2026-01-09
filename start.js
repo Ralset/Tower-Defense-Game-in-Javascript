@@ -17,11 +17,6 @@ for (let i = 0; i < N; i++){
     gridPlaced.push(temp);
 }
 
-enemies.push(new Enemy());
-towers.push(new Tower(2, 2, TOWER_TYPES[0]));
-gridPlaced[2][2]=true;
-towers.push(new Tower(5, 5, TOWER_TYPES[1]));
-gridPlaced[5][5]=true;
-
 //pocetak gameloopa
 requestAnimationFrame(loop);
+

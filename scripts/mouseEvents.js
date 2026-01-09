@@ -16,9 +16,8 @@ canvas.addEventListener("mousemove", e => {
 });
 
 canvas.addEventListener("mousedown", e => {
-    if (mouse.y <= MENU_SIZE) return;
-    if (mouse.y < SHOP_SIZE + MENU_SIZE)
-        shopClick(sqr);
+    if (mouse.y <= MENU_SIZE && mouse.x <= GRID_SIZE) closePlaceMode();
+    else if (mouse.y < SHOP_SIZE + MENU_SIZE) shopClick(sqr);
     else gridClick();
 });
 
@@ -29,6 +28,5 @@ function shopClick(){
 
 function gridClick(){
     //console.log("----> Clicked on grid at (", sqrX, ", ", sqrY,")");
-    if (PLACE_MODE)
-        placeTower();
+    if (PLACE_MODE) placeTower();
 }
