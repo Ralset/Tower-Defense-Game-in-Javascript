@@ -1,19 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-let PLACE_MODE = false;
-let PLACE_INDEX = -1;
-let money = 500;
-let health = 100;
-let max_health = 100;
-let last = 0;
-let enemies = [];
-let towers = [];
-
-enemies.push(new Enemy());
-towers.push(new Tower(2, 2, TOWER_TYPES[0]));
-towers.push(new Tower(5, 5, TOWER_TYPES[1]));
-
 function gameOver()
 {
     alert("You Lost!");
@@ -64,7 +51,7 @@ function draw(){
     drawPath();
     for (const t of towers) {
         t.Draw(ctx);
-        if (t.x === sqrX && t.y === sqrY) t.DrawHover(ctx);
+        if (t.x === sqrX && t.y === sqrY && !PLACE_MODE) t.DrawHover(ctx);
     }
     for (const e of enemies) e.Draw(ctx);
     drawPlace();
@@ -82,5 +69,3 @@ function loop(t){
     if (health > 0) requestAnimationFrame(loop);
     else gameOver();
 }
-
-requestAnimationFrame(loop);

@@ -3,8 +3,23 @@ function drawPlace(){
     drawUnderMouse();
 }
 
+function placeTower(){
+    if (gridPlaced[sqrX][sqrY]) return;
+    PLACE_MODE = false;
+    towers.push(new Tower(sqrX, sqrY, TOWER_TYPES[PLACE_INDEX]));
+    gridPlaced[sqrX][sqrY] = true;
+    money -= TOWER_TYPES[PLACE_INDEX].cost;
+}
+
 function drawUnderMouse(){
     let type = TOWER_TYPES[PLACE_INDEX];
+    if (gridPlaced[sqrX][sqrY]){
+        ctx.beginPath();
+        ctx.fillStyle = "#5700003e";
+        ctx.arc(sqrX * GRID_SIZE + type.width, sqrY * GRID_SIZE + MENU_SIZE + SHOP_SIZE + type.height, type.range, 0, Math.PI * 2);
+        ctx.fill();
+        return;
+    }
     ctx.beginPath();
     ctx.fillStyle = type.color;
     ctx.strokeStyle = type.border_color;
@@ -22,10 +37,8 @@ function drawUnderMouse(){
             break;
     }
     ctx.lineWidth = 1;
-
-    ctx.fillStyle = type.range_color;
     ctx.beginPath();
+    ctx.fillStyle = type.range_color;
     ctx.arc(sqrX * GRID_SIZE + type.width, sqrY * GRID_SIZE + MENU_SIZE + SHOP_SIZE + type.height, type.range, 0, Math.PI * 2);
     ctx.fill();
-
 }

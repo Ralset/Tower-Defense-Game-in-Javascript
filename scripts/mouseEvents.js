@@ -29,4 +29,6 @@ function shopClick(){
 
 function gridClick(){
     //console.log("----> Clicked on grid at (", sqrX, ", ", sqrY,")");
+    if (PLACE_MODE)
+        placeTower();
 }
