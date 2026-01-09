@@ -142,7 +142,7 @@ TOWER_TYPES = [
     cost: 500,
     damage: 5,
     range: 180,
-    attack_interval: 100,
+    attack_interval: 50,
     width: 50,
     height: 50,
     shape: "square",
