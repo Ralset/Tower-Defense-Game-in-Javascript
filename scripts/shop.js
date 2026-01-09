@@ -54,6 +54,7 @@ function drawTowerShopInfo(type, x, y){
 }
 
 function shopBuy(i){
+    if (i === null) return;
     if (i >= TOWER_TYPES.length) return;
     if (TOWER_TYPES[i].cost > money) {
         console.log("Not enough money");

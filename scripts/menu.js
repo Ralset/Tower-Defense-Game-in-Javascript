@@ -3,6 +3,7 @@ function drawMenu(){
     drawHealth();
     drawMoney();
     drawPlaceClose();
+    drawWaveTimer()
 }
 
 function drawMenuBorder(){
@@ -45,4 +46,14 @@ function drawPlaceClose(){
     ctx.textBaseline = "middle";
     ctx.font = `${MENU_SIZE/2}px arial`;
     ctx.fillText(`X`, GRID_SIZE/2, MENU_SIZE/2);
+}
+
+function drawWaveTimer(){
+    ctx.beginPath();
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = `${MENU_SIZE/2}px arial`;
+    ctx.fillText(`Next wave in: ${untilNextWave}`, canvas.width/2, MENU_SIZE/2);
+
 }

@@ -32,7 +32,7 @@ WAVES = [
       {
         type: 0,
         ammount: 10,
-        cooldown: 1000
+        cooldown: 1500
       }
     ]
   },
