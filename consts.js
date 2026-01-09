@@ -15,6 +15,41 @@ const PATH = [
   { x: 8, y: 5},
 ];
 
+WAVES = [
+  { 
+    until_next_wave: 20000,
+    wave: [
+      {
+        type: 0,
+        ammount: 5,
+        cooldown: 3000
+      }
+    ]
+  },
+  {
+    until_next_wave: 10000,
+    wave: [
+      {
+        type: 0,
+        ammount: 10,
+        cooldown: 1000
+      }
+    ]
+  },
+
+]
+
+ENEMY_TYPES = [
+  {
+    type: 1,
+    damage: 5,
+    worth: 25,
+    speed: 100,
+    hp: 100,
+    draw_radius: 15,
+  },
+]
+
 TOWER_TYPES = [
   {
     type: 1,

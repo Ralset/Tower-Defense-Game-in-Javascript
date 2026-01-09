@@ -1,14 +1,15 @@
 class Enemy 
 {
-    constructor() 
+    constructor(type) 
     {
-        this.damage = 5;
-        this.worth = 25;
-        this._speed = 100;
-        this._hp = 600;
-        this._max_hp = 600;
+        this.type = type.type;
+        this.damage = type.damage;
+        this.worth = type.worth;
+        this._speed = type.speed;
+        this._hp = type.hp;
+        this._max_hp = type.hp;
         this._segment = 0;
-        this._draw_radius = 15;
+        this._draw_radius = type.draw_radius;
         this._hp_width = this._draw_radius * 2;
         this._hp_height = 4;
         this.x = PATH[0].x * GRID_SIZE;
