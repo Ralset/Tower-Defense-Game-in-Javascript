@@ -1,2 +1,3 @@
+Figure out observer system for Timers/Ticks
 Sell system
 ZAMENITI SVE ALERTOVE SA EKRANIMA
