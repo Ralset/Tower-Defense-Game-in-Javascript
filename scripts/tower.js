@@ -18,10 +18,12 @@ class Tower
         this._x_pos = x * GRID_SIZE + GRID_SIZE / 2 - this._width / 2;
         this._y_pos = y * GRID_SIZE + SHOP_SIZE + MENU_SIZE + GRID_SIZE / 2 - this._height / 2;
         this.CanAttack = true;
+        this._cooldown = 0;
     }
     Update(dt)
     {
-        return;
+        if(this._cooldown > 0) this._cooldown -= dt*1000;
+        else this.CanAttack = true;
     }
     Draw(ctx)
     {
@@ -57,8 +59,9 @@ class Tower
     }
     Attack(enemy)
     {
-        enemy.Damage(this._damage);
+        if (!this.CanAttack) return;
         this.CanAttack = false;
-        setTimeout(() => {this.CanAttack=true}, this._attack_interval);
+        enemy.Damage(this._damage);
+        this._cooldown = this._attack_interval;
     }
 }

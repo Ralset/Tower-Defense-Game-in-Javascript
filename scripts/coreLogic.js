@@ -12,6 +12,7 @@ function update(dt){
         else return (Math.abs(PATH[seg].x - b.x) > Math.abs(PATH[seg].x - a.x));
     });
     for (const t of towers){
+        t.Update(dt);
         if (!t.CanAttack) continue;
         let target_enemy_index = -1;
         for (let i = enemies.length - 1; i >= 0; i--){
