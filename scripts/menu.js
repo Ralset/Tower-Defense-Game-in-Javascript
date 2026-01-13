@@ -55,5 +55,4 @@ function drawWaveTimer(){
     ctx.textBaseline = "middle";
     ctx.font = `${MENU_SIZE/2}px arial`;
     ctx.fillText(`Next wave in: ${untilNextWave}`, canvas.width/2, MENU_SIZE/2);
-
 }

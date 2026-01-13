@@ -21,13 +21,13 @@ class Enemy
     Update(dt)
     {
         if (this.AtEnd) return;
+        if (this._segment + 1 >= PATH.length){
+            this.AtEnd = true;
+            return;
+        } 
         const start = PATH[this._segment];
         const end = PATH[this._segment + 1];
         //console.log("Enemy pos (", Math.trunc(this.x), ", ", Math.trunc(this.y), ")  segment = ", this._segment);
-        if (!end){
-            this.AtEnd = true;
-            return;
-        }
         //Nema dijagonalnog kretanja
         if (start.x === end.x){
             const dy = end.y * GRID_SIZE + SHOP_SIZE + MENU_SIZE - this.y;

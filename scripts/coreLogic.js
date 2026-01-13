@@ -7,8 +7,9 @@ function update(dt){
     enemies.sort((a, b) => {
         if (a._segment !== b._segment) return a._segment - b._segment;
         const seg = a._segment;
-        if (PATH[seg + 1] === null || PATH[seg].x === PATH[seg + 1].x) return (Math.abs(PATH[seg].y - a.y) - Math.abs(PATH[seg].y - b.y));
-        else return a.x - b.x;
+        if (seg + 1 < PATH.length || PATH[seg].x === PATH[seg + 1].x)
+            return (Math.abs(PATH[seg].y - b.y) > Math.abs(PATH[seg].y - a.y));
+        else return (Math.abs(PATH[seg].x - b.x) > Math.abs(PATH[seg].x - a.x));
     });
     for (const t of towers){
         if (!t.CanAttack) continue;
@@ -59,14 +60,4 @@ function draw(){
     drawOutBorderAndBackground();
     drawMenu();
     drawShop();
-}
-
-function loop(t){
-    const dt = (t - last) / 1000;
-    last = t;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    update(dt);
-    draw();
-    if (health > 0) requestAnimationFrame(loop);
-    else gameOver();
 }

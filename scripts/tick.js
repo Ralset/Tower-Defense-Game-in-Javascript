@@ -1,7 +1,7 @@
 class Tick {
-    constructor(TPS = 100){
-        this.ticksPerSecond = TPS;
-        this.delay = 1000 / TPS; 
+    constructor(ticksPerSecond = 100){
+        this.ticksPerSecond = ticksPerSecond;
+        this.delay = 1000 / ticksPerSecond; 
         this.subscribers = new Set();
         this.timerId = null;
         this.tickCount = 0;
@@ -28,7 +28,7 @@ class Tick {
     }
 
     _notify(tick){
-        for (const sub of this.subscribers){
+        for (const sub of Array.from(this.subscribers)){
             if(tick % sub.freq === 0)
                 sub.func();
         }

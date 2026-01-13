@@ -2,6 +2,7 @@ const GRID_SIZE = 100;
 const SHOP_SIZE = 100;
 const MENU_SIZE = 50;
 const SHOP_ICON_SCALE = 0.5;
+const TPS = 100;
 
 const PATH = [
   { x: 0, y: 4},
@@ -17,7 +18,7 @@ const PATH = [
 
 WAVES = [
   { 
-    until_next_wave: 20000,
+    until_next_wave: 20,
     wave: [
       {
         type: 0,
@@ -27,7 +28,7 @@ WAVES = [
     ]
   },
   {
-    until_next_wave: 30000,
+    until_next_wave: 30,
     wave: [
       {
         type: 0,
@@ -37,7 +38,7 @@ WAVES = [
     ]
   },
   {
-    until_next_wave: 10000,
+    until_next_wave: 10,
     wave: [
       {
         type: 1,
@@ -47,7 +48,7 @@ WAVES = [
     ]
   },
   {
-    until_next_wave: 15000,
+    until_next_wave: 15,
     wave: [
       {
         type: 0,
@@ -57,7 +58,7 @@ WAVES = [
     ]
   },
   {
-    until_next_wave:  20000,
+    until_next_wave:  20,
     wave: [
       {
         type: 1,
@@ -67,7 +68,7 @@ WAVES = [
     ]
   },
   {
-    until_next_wave: 20000,
+    until_next_wave: 20,
     wave: [
       {
         type: 0,
