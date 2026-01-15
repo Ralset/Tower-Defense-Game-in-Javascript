@@ -1,6 +1,4 @@
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-const N = canvas.width/GRID_SIZE;
+//Let there be Time
 const Time = new Tick(TPS);
 
 let PLACE_MODE = false;
@@ -20,8 +18,20 @@ let t_winUnsub;
 const BASE_WIDTH = 800;
 const BASE_HEIGHT = 950;
 
+const MBASE_WIDTH = 100;
+const MBASE_HEIGHT = 950;
+
+const N = BASE_WIDTH/GRID_SIZE;
+
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const menu_canvas = document.getElementById("menu");
+const mctx = menu_canvas.getContext("2d");
+
 canvas.width = BASE_WIDTH;
 canvas.height = BASE_HEIGHT;
+menu_canvas.width = MBASE_WIDTH;
+menu_canvas.height = MBASE_HEIGHT;
 
 function resize() {
     const scale = Math.min(
@@ -31,6 +41,8 @@ function resize() {
 
     canvas.style.width  = `${BASE_WIDTH * scale}px`;
     canvas.style.height = `${BASE_HEIGHT * scale}px`;
+    menu_canvas.style.width  = `${MBASE_WIDTH * scale}px`;
+    menu_canvas.style.height = `${MBASE_HEIGHT * scale}px`;
 }
 resize();
 

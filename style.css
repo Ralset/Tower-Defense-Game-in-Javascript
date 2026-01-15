@@ -8,12 +8,19 @@ body{
     overflow: hidden;
 }
 
-.gamescreen{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    height: 100vh;
+}
+
+.adjacent-element {
+    justify-self: end;
+}
+
+.center-container {
+    justify-self: center;
 }
 
 canvas{

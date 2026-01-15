@@ -6,6 +6,9 @@ function updateSquares(){
     else sqr = null;
     sqrX = Math.trunc(mouse.x / GRID_SIZE);
     sqrY = Math.trunc((mouse.y - SHOP_SIZE - MENU_SIZE) / GRID_SIZE);
+
+    sqrX = Math.max(0,Math.min(N-1,sqrX));
+    sqrY = Math.max(0,Math.min(N-1,sqrY));
 }
 
 canvas.addEventListener("mousemove", e => {
