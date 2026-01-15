@@ -4,6 +4,19 @@ const MENU_SIZE = 50;
 const SHOP_ICON_SCALE = 0.5;
 const TPS = 100;
 
+const BASE_WIDTH = 800;
+const BASE_HEIGHT = 950;
+
+const MBASE_WIDTH = 100;
+const MBASE_HEIGHT = 950;
+
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const menu_canvas = document.getElementById("menu");
+const mctx = menu_canvas.getContext("2d");
+
+const N = BASE_WIDTH/GRID_SIZE;
+
 const PATH = [
   { x: 0, y: 4},
   { x: 1, y: 4},

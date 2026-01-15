@@ -15,18 +15,6 @@ let wave_count = -1;
 let t_waveUnsub;
 let t_winUnsub;
 
-const BASE_WIDTH = 800;
-const BASE_HEIGHT = 950;
-
-const MBASE_WIDTH = 100;
-const MBASE_HEIGHT = 950;
-
-const N = BASE_WIDTH/GRID_SIZE;
-
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-const menu_canvas = document.getElementById("menu");
-const mctx = menu_canvas.getContext("2d");
 
 canvas.width = BASE_WIDTH;
 canvas.height = BASE_HEIGHT;
