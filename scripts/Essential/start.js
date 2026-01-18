@@ -15,6 +15,7 @@ let wave_count = -1;
 let t_waveUnsub;
 let t_winUnsub;
 
+let scale = 1;
 
 canvas.width = BASE_WIDTH;
 canvas.height = BASE_HEIGHT;
@@ -22,7 +23,7 @@ menu_canvas.width = MBASE_WIDTH;
 menu_canvas.height = MBASE_HEIGHT;
 
 function resize() {
-    const scale = Math.min(
+    scale = Math.min(
         window.innerWidth / BASE_WIDTH,
         window.innerHeight / BASE_HEIGHT
     );

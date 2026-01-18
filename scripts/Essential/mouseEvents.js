@@ -2,10 +2,10 @@ let mouse = { x: 0, y: 0 };
 let sqr, sqrX, sqrY;
 
 function updateSquares(){
-    if (mouse.y >= MENU_SIZE && mouse.y < SHOP_SIZE + MENU_SIZE) sqr = Math.trunc(mouse.x / GRID_SIZE);
+    if (mouse.y >= MENU_SIZE * scale && mouse.y < SHOP_SIZE * scale + MENU_SIZE * scale) sqr = Math.trunc(mouse.x / (GRID_SIZE * scale));
     else sqr = null;
-    sqrX = Math.trunc(mouse.x / GRID_SIZE);
-    sqrY = Math.trunc((mouse.y - SHOP_SIZE - MENU_SIZE) / GRID_SIZE);
+    sqrX = Math.trunc(mouse.x / (GRID_SIZE * scale));
+    sqrY = Math.trunc((mouse.y - SHOP_SIZE * scale - MENU_SIZE * scale) / (GRID_SIZE * scale));
 
     sqrX = Math.max(0,Math.min(N-1,sqrX));
     sqrY = Math.max(0,Math.min(N-1,sqrY));
@@ -19,8 +19,8 @@ canvas.addEventListener("mousemove", e => {
 });
 
 canvas.addEventListener("mousedown", e => {
-    if (mouse.y <= MENU_SIZE && mouse.x <= GRID_SIZE) closePlaceMode();
-    else if (mouse.y < SHOP_SIZE + MENU_SIZE) shopClick(sqr);
+    if (mouse.y <= MENU_SIZE * scale && mouse.x <= GRID_SIZE * scale) closePlaceMode();
+    else if (mouse.y < (SHOP_SIZE + MENU_SIZE) * scale) shopClick(sqr);
     else gridClick();
 });
 

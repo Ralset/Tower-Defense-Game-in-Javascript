@@ -6,9 +6,12 @@ const TPS = 100;
 
 const BASE_WIDTH = 800;
 const BASE_HEIGHT = 950;
-
+/*
 const MBASE_WIDTH = 100;
 const MBASE_HEIGHT = 950;
+*/
+const MBASE_WIDTH = 0;
+const MBASE_HEIGHT = 0;
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
